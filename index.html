@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./main.css" />
+		<title>Tekin Kursimiz </title>
+	</head>
+	<body>
+		<div class="container">
+			<form
+				action="https://sheetdb.io/api/v1/ux5xt1hutm5y5"
+				method="post"
+				id="sheetdb-form"
+			>
+				<div class="container">
+					<h1>Assalomu Alykum Tekin Dizaynerlik Qursimizga Xush kelibsiz </h1>
+					<p>ILTIMOS PASTAGI YOZISH BOLIMIGA ISMINGIZ VA YOSHINGIZNI KIRITING </p>
+					<hr />
+
+					<label for="email"><b>ISMINGIZ</b></label>
+					<input
+						type="text"
+						placeholder="Ismingiz"
+						name="data[email]"
+						required
+					/>
+
+					<label for="psw"><b>YOSHINGIZ FAQAT TOGRI YOZIN</b></label>
+					<input
+						type="text"
+						placeholder="Yoshingizni Kiritin"
+						name="data[psw]"
+						required
+					/>
+
+					<label for="psw repeat"><b>Telefon Raqamingiz Masalan +998</b></label>
+					<input
+						type="text"
+						placeholder="Telefon Raqamingiz"
+						name="data[pswrepeat]"	
+						required
+					/>
+
+					<label>
+						<input
+							type="checkbox"
+							checked="checked"
+							name="remember"
+							style="margin-bottom: 15px"
+						/>
+						Meni Unutmang
+					</label>
+
+					<p>
+						By creating an account you agree to our
+						<a href="#" style="color: dodgerblue">Terms & Privacy</a>.
+					</p>
+
+					<div class="clearfix">
+						<button type="button" class="cancelbtn">Cancel</button>
+						<button type="submit" class="signupbtn">Sign Up</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<script>
+			var form = document.getElementById("sheetdb-form");
+			form.addEventListener("submit", (e) => {
+				e.preventDefault();
+				fetch(form.action, {
+					method: "POST",
+					body: new FormData(document.getElementById("sheetdb-form")),
+				})
+					.then((response) => response.json())
+					.then((html) => {
+						// you can put any JS code here
+						window.open("page2.html", "_blank");
+					});
+			});
+		</script>
+	</body>
+</html>
